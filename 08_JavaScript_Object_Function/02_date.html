@@ -19,11 +19,11 @@
 
     <script>
         // 宣告一個時間物件
-
+        var d=new Date();
         // 取得年份
-
+        console.log(d.getFullYear());
         // 取得月份 (請注意這裡)
-
+        console.log(d.getMonth()+1);
         // 取得日期
 
         // 取得星期 (請注意這裡)
@@ -35,9 +35,17 @@
         // 若日期物件生成後，我們需要加一天
 
         // 若日期物件生成後，我們需要加一個月
-
+        
         // 試試看，如何透過日期的加減，取得這個月的最後一天?
+        d.setMonth(d.getMonth()+1);
+        d.setDate(1);
+        d.setDate(d.getDate()-1);
+        console.log(d.getMonth());
+        console.log(d.getDate());
+        
 
+        // console.log(d.getDate());
+        // console.log(d.getDay());
         // 宣告兩個日期物件，並指定日期
 
         // 進行日期相減

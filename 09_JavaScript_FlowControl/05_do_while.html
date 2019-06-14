@@ -20,7 +20,14 @@
     <p id="demo"></p>
 
     <script>
-        
+        function sum(){
+            var tot=0;
+            do{
+                var input = parseInt(prompt("請輸入價錢",""));
+                tot= tot +input;
+            }while(input!=0)
+            alert("總金額為:"+tot);
+        }
         // 透過 prompt 讓使用者輸入金額
         
         // 若輸入0表示不再輸入，進行畫面顯示結算金額

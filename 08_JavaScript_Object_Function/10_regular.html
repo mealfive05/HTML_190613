@@ -23,7 +23,12 @@
 
 
         // 試試看，驗證密碼是否有包含至少一位大寫英文，在不知道 Regular Expressions 正規表示式以前，我們可以怎麼寫? 
+        var ps="1234567A"
+        for(var i=0;i<ps;i++){
+            var temp = ps.substring(i,i+1);
+            console.log(temp);
 
+        }
 
         // 被「//」夾住的文字，是 正規表示法 的描述
         let patt = /rday/;
@@ -46,11 +51,33 @@
           
 
         // 1. 驗證密碼是否有包含至少一位大寫英文
+            patt = /[A-Z]/;
+            var pattern = new RegExp('[0-9]{4}-[0-9]{2}-[0-9]{2}');
+            var str1 = '1996-08-06';
+
+            if(str1.match(pattern)){
+                console.log('yes');
+            }
 
         // 2. 驗證輸入的文字是否有包含空白
-
+            patt = /\s/;
+            var name ="資策會 ";
+            if(name.match(patt)){
+            console.log('ya');
+        }
         // 3. 驗證身份證字號格式，第一碼是英文，後面是數字；例如：A123456789
 
+            patt = /^[A-Za-z]\d{9}$/;
+            // var flag=0;
+            
+            var id2= prompt("輸入身分證",);
+            
+            if (id2.match(patt)){
+                alert('correct');
+                flag=1;}
+            // }else{
+            //     flag=0;
+            // }
         // 4. 驗證車牌號碼，假設以 - 分隔，-前會有2-3碼英文，-後會有3-4碼數字
 
     </script>

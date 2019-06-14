@@ -12,6 +12,14 @@
     <p><a href="https://pjchender.blogspot.com/2016/06/javascriptfunction-constructornew.html"  target="_blank">補充資料</a></p>
 
     <script>
+        var obj={
+            chinese:100,
+            english:80,
+            math:50,
+            history:80
+        }
+        console.log(obj.math);
+        console.log(obj["math"]);
         // 使用{} create object
         // 一個物件是一些屬性的集合，而屬性是鍵與值之間的關聯。
         
@@ -22,7 +30,19 @@
         // 使用function create object
         // a. 建議第一個字母為大寫
         // b. function裡面的this，是一個關鍵字，在物件被誕生時會伴隨著誕生
-        
+            function person(inputName,inputYear){
+                this.userName=inputName;
+                this.userBirthday=inputYear;
+                this.getAge=function(){
+                    var d = new Date();
+                    var year = d.getFullYear();
+
+                    var year1 =year - this.userBirthday;
+                     return year1;
+                }
+            }
+            var p =new person('jonas','1990');
+            console.log(p.getAge());
         // 新增一個person物件，傳入姓名和出生年份
 
         // 取得姓名，然後列印看看

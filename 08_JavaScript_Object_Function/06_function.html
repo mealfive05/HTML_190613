@@ -8,13 +8,37 @@
 <body>
     <p><a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">function</a></p>
     <p>將功能獨立出來，提高程式的可用性</p>
-
+    <p id ="result"></p>
+    <button id="btn1"onclick="num_btn('1')">1</button>
+    <button id="btn2"onclick="num_btn('2')">2</button>
+    <button id="btn3"onclick="num_btn('3')">3</button>
+    <button id="btn4"onclick="num_btn('4')">4</button>
+    <button id="btn5"onclick="num_btn('5')">5</button>
     <script type="text/javascript">
         
+        function num_btn(str){
+            document.getElementById("result").innerHTML=document.getElementById("result").innerHTML+str;
+        }
         // 一般我們使用方式，定義一個有名稱的函式
-        
+        var msg = function(para){
+            console.log(para);
+        }
         // 另外一種function宣告的方式，但要注意，宣告前呼叫程式會死掉
-        
+        var msg=prompt("請問幾杯",);
+        var msg1=prompt("總價",);
+        function amt(inputQty,inputprice){
+            var tot;
+            if(inputQty>=10 && inputQty<20){
+                tot = inputprice*0.95;
+            }else if(inputQty>=20){
+                tot = inputprice*0.9;
+            }else{
+                tot=inputprice;
+            }
+             alert("總共"+tot+"元");
+            return(tot); //若是沒有return,外面console.log(amt(msg,msg1));會underfine;
+        }
+        amt(msg,msg1);
         // function可以有多個參數傳入，也可以有回傳值
         // 10杯以上打95折
         // 20杯以上打9折

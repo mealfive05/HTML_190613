@@ -8,15 +8,16 @@
 
 <body>
     <p id="memo">點選圖片後，放大圖片和文字</p>
-    <img id="imgOP" onclick="changeImage()" src="../02_HTML_Table/img/01.jpg">
+    <img id="imgOP" onclick="changeImage()" src="img/window.png">
 
     <script>
         function changeImage() {
             // 1. 網頁的 圖片的 樣式的 寬度 改變
-
+                document.getElementById("imgOP").style.width="40px";
             // 2. 網頁的 圖片的 樣式的 高度 改變
-
+            document.getElementById("imgOP").style.height="60px";
             // 3. 網頁的 memo的 樣式的 字型 改變
+            document.getElementById("memo").style.fontSize="30px";
         }
 
     </script>

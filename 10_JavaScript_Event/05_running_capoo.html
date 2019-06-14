@@ -14,11 +14,45 @@
 </head>
 
 <!-- 1. 幫body掛一個 onkeydown 事件 -->
-<body>
+
+<body onkeydown="moveCapoo(event)">
 
     <img id="cat" src="img/capoo.gif">
 
+
+
     <script>
+        var capoo=document.getElementById("cat");
+
+        function moveCapoo(eve) {
+
+            var style=window.getComputedStyle(capoo);
+            var capooLeft = style.getPropertyValue('left');
+            var capooTop = style.getPropertyValue('top');
+            // var capooRight = style.getPropertyValue('right');
+            // var capooDown = style.getPropertyValue('down');
+            
+            var x = eve.keyCode;
+            switch (x) {
+                case 37:
+                    capoo.style.left =  (parseInt(capooLeft) -10)+"px" ;
+                    capoo.style.transform = "rotateY(0deg)";
+                    break;
+                case 38:
+                capoo.style.top =  (parseInt(capooTop) -10)+"px" ;
+                    
+                    break;
+                case 39:
+                    capoo.style.left =  (parseInt(capooLeft) +10)+"px" ;
+                    capoo.style.transform = "rotateY(180deg)";
+                    break;
+                case 40:
+                capoo.style.top =  (parseInt(capooTop) +10)+"px" ;
+                    
+                    break;
+
+            }
+        }
         // 2. 取得 #cat 這個元素
 
         // 3. 撰寫讓 # cat 移動的方法
